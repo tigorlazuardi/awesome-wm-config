@@ -20,6 +20,7 @@ run_once({
 	'conky -c "$HOME/.config/awesome/conky_config.lua"',
 	'xfce4-power-manager',
 	'blueberry-tray',
+	'imwheel',
 }) -- entries must be comma-separated
 
 -- restart picom on every run
