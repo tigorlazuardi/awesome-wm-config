@@ -3,32 +3,19 @@ local awful = require('awful')
 local O = require('options')
 local modkey = O.modkey
 local menubar = require('menubar')
+local h = require('helpers')
 
-local function description(text)
-	return {
-		description = 'launches ' .. text,
-		group = 'launcher',
-	}
-end
+local description = h.desc_gen('launcher')
 
-local function spawn(command)
-	return function()
-		awful.spawn.with_shell(command)
-	end
-end
-
-local function spawn_no_shell(command)
-	return function()
-		awful.spawn(command)
-	end
-end
+local k = awful.key
 
 return gears.table.join(
-	awful.key({ modkey }, 'Return', spawn(O.terminal), description('terminal')),
-	awful.key({ modkey }, 'e', spawn(O.explorer), description('explorer')),
-	awful.key({ modkey, 'Shift' }, 'Escape', spawn('xfce4-taskmanager'), description('spawn task manager')),
-	awful.key({ modkey, 'Shift' }, 'Return', spawn(O.explorer), description('explorer')),
-	awful.key({ modkey }, 'd', spawn('rofi -show drun'), description('rofi drun prompt')),
-	awful.key({}, 'F12', spawn_no_shell('xfce4-terminal --drop-down'), description('dropdown terminal')),
-	awful.key({ modkey }, 'p', menubar.show, description('show menubar'))
+	k({ modkey }, 'Return', h.spawn(O.terminal), description('terminal')),
+	k({ modkey }, 'e', h.spawn(O.explorer), description('explorer')),
+	k({ modkey, 'Shift' }, 'Escape', h.spawn('xfce4-taskmanager'), description('spawn task manager')),
+	k({ modkey, 'Shift' }, 'Return', h.spawn(O.explorer), description('explorer')),
+	k({ modkey }, 'd', h.spawn('rofi -show drun'), description('rofi drun prompt')),
+	k({}, 'F12', h.spawn_no_shell('xfce4-terminal --drop-down'), description('dropdown terminal')),
+	k({ modkey }, 'p', menubar.show, description('show menubar')),
+	k({}, 'Print', h.spawn('flameshot gui'), description('flameshot gui'))
 )
