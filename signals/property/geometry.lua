@@ -1,7 +1,5 @@
-local awful = require('awful')
 local gears = require('gears')
 local beautiful = require('beautiful')
-local screen = awful.screen
 
 screen.connect_signal('property::geometry', function(s)
 	-- Wallpaper

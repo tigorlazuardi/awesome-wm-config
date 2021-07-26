@@ -1,5 +1,3 @@
-local awesome = require('awesome')
-local client = require('awful').client
 local awful = require('awful')
 
 -- Signal function to execute when a new client appears.

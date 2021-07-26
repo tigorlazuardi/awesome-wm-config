@@ -1,6 +1,5 @@
 local freedesktop = require('freedesktop')
 local terminal = require('options').terminal
-local awesome = require('awesome')
 
 return freedesktop.menu.build({
 	before = {

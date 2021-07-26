@@ -1,6 +1,4 @@
-local awful = require('awful')
 local beautiful = require('beautiful')
-local screen = awful.screen
 
 screen.connect_signal('arrange', function(s)
 	local only_one = #s.tiled_clients == 1

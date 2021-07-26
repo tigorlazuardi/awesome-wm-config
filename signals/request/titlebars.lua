@@ -1,4 +1,3 @@
-local client = require('awful').client
 local awful = require('awful')
 local beautiful = require('beautiful')
 local wibox = require('wibox')
