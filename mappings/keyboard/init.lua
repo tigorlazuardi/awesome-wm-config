@@ -12,4 +12,4 @@ local keys = gears.table.join(
 	require('mappings.keyboard.variety')
 )
 
-root.keys(keys)
+return keys
