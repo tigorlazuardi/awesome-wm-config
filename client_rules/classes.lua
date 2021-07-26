@@ -30,6 +30,7 @@ M.floating_clients = {
 			'veromix',
 			'xtightvncviewer',
 			'Xfce4-terminal',
+			'Variety',
 		},
 
 		name = {
