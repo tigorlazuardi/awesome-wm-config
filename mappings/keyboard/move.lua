@@ -70,8 +70,6 @@ local function swap_idx(num)
 	end
 end
 
-local Alt = 'Mod1'
-
 return gears.table.join(
 	-- Focus
 	k({ modkey }, 'h', focus(left), desc('focus client to the left')),
@@ -80,18 +78,16 @@ return gears.table.join(
 	k({ modkey }, 'l', focus(right), desc('focus client to the right')),
 
 	-- Focus
-	k({ modkey, Control }, 'h', focus_screen(left), desc('focus screen to the left')),
-	k({ modkey, Control }, 'j', focus_screen(down), desc('focus to screen below')),
-	k({ modkey, Control }, 'k', focus_screen(up), desc('focus to screen upwards')),
-	k({ modkey, Control }, 'l', focus_screen(right), desc('focus screen to the right')),
+	-- k({ modkey, Control }, 'h', focus_screen(left), desc('focus screen to the left')),
+	k({ modkey, Control }, 'j', swap_idx(1), desc('swap with next client by index')),
+	k({ modkey, Control }, 'k', swap_idx(-1), desc('swap with previous client by index')),
+	-- k({ modkey, Control }, 'l', focus_screen(right), desc('focus screen to the right')),
 
 	--
 	k({ modkey, Shift }, 'h', swap(left), desc('swap with client to the left')),
 	k({ modkey, Shift }, 'j', swap(down), desc('swap with client below')),
 	k({ modkey, Shift }, 'k', swap(up), desc('swap with client upwards')),
-	k({ modkey, Shift }, 'j', swap(down), desc('swap with client below')),
-	k({ Shift, Alt }, 'k', swap_idx(-1), desc('swap with previous client by index')),
-	k({ Shift, Alt }, 'j', swap_idx(1), desc('swap with next client by index')),
+	k({ modkey, Shift }, 'l', swap(right), desc('swap with client below')),
 	k({ modkey, Shift, Control }, 'h', g_swap(left), desc('swap with client to the left (across screen)')),
 	k({ modkey, Shift, Control }, 'j', g_swap(down), desc('swap with client below (across screen)')),
 	k({ modkey, Shift, Control }, 'k', g_swap(up), desc('swap with client upwards (across screen)')),
