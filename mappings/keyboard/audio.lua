@@ -13,6 +13,17 @@ local function vol_update(action)
 		awful.spawn.easy_async_with_shell('pulseaudio-ctl ' .. action, function()
 			local b = require('beautiful')
 			b.volume.update()
+			awful.spawn.with_line_callback('pulseaudio-ctl full-status', {
+				stdout = function(line)
+					local gears = require('gears')
+					local out = gears.string.split(line, '%s')
+					if out[2] == 'yes' then
+						awful.spawn.with_shell('volnoti-show -m')
+					else
+						awful.spawn.with_shell(string.format('volnoti-show %s', out[1]))
+					end
+				end,
+			})
 		end)
 	end
 end
