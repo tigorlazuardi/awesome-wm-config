@@ -25,3 +25,4 @@ run_once({
 
 -- restart picom on every run
 spawn('picom -b --config $HOME/.config/awesome/picom.conf')
+spawn('gnome-keyring-daemon --start --components=pkcs11,secrets,ssh')
