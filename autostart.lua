@@ -5,7 +5,7 @@ local spawn = awful.spawn.with_shell
 -- {{{ Autostart windowless processes
 local function run_once(cmd_arr)
 	for _, cmd in ipairs(cmd_arr) do
-		spawn(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
+		spawn(string.format("pgrep -u $USER '%s' > /dev/null || (%s)", cmd, cmd))
 	end
 end
 
@@ -21,6 +21,7 @@ run_once({
 	'xfce4-power-manager',
 	'blueberry-tray',
 	'imwheel',
+	'volnoti',
 }) -- entries must be comma-separated
 
 -- restart picom on every run
