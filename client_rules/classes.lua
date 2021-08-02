@@ -45,11 +45,13 @@ M.floating_clients = {
 	},
 	properties = { floating = true },
 }
+
 M.floating_clients_centered = {
 	rule_any = {
 		class = {
 			'Polkit-gnome-authentication-agent-1',
 			'Arcolinux-calamares-tool.py',
+			'Nm-connection-editor',
 		},
 	},
 	properties = { floating = true },
