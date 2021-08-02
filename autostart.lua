@@ -10,15 +10,15 @@ local function run_once(cmd_arr)
 end
 
 run_once({
-	'unclutter -root',
+	-- 'unclutter -root',
 	'nm-applet',
 	'pamac-tray',
 	'variety',
 	'/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1',
 	'numlockx on',
 	'volumeicon',
-	'conky -c "$HOME/.config/awesome/conky_config.lua"',
-	'xfce4-power-manager',
+	-- 'conky -c "$HOME/.config/awesome/conky_config.lua"',
+	-- 'xfce4-power-manager',
 	'blueberry-tray',
 	'imwheel',
 	'volnoti',
@@ -26,4 +26,6 @@ run_once({
 
 -- restart picom on every run
 spawn('picom -b --config $HOME/.config/awesome/picom.conf')
-spawn('gnome-keyring-daemon --start --components=pkcs11,secrets,ssh')
+spawn('gnome-keyring-daemon --start')
+spawn('pulseaudio --start')
+spawn('pactl set-default-sink alsa_output.pci-0000_0f_00.4.analog-stereo')

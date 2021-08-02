@@ -21,15 +21,26 @@ local function focus_screen(dir)
 	end
 end
 
+local function alone()
+	local screen = awful.screen.focused()
+	local i = 0
+	for _ in pairs(screen:get_clients()) do
+		i = i + 1
+	end
+	return i == 1
+end
+
 ---generate function focus client
 ---@param dir string left, down, up, right
 ---@return function
 local function focus(dir)
 	return function()
-		awful.client.focus.global_bydirection(dir)
-		if client.focus then
-			client.focus:raise()
+		if alone() or not client.focus then
+			focus_screen(dir)()
+			return
 		end
+		awful.client.focus.global_bydirection(dir)
+		client.focus:raise()
 	end
 end
 
