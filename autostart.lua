@@ -22,6 +22,7 @@ run_once({
 	'blueberry-tray',
 	'imwheel',
 	'volnoti',
+	'greenclip daemon',
 }) -- entries must be comma-separated
 
 -- restart picom on every run
