@@ -45,7 +45,7 @@ return gears.table.join(
 	k({ modkey }, '/', hotkeys_popup.show_help, desc('show help')),
 	k({ modkey, 'Control' }, 'r', awesome.restart, desc('restart awesomewm')),
 	k({ modkey, 'Shift' }, 'Delete', awesome.quit, desc('force quit awesomewm')),
-	k({ modkey }, 'Delete', spawn('arcolinux-logout'), desc('logout prompt')),
+	k({ modkey }, 'Delete', spawn('oblogout'), desc('logout prompt')),
 	k({ modkey }, 'Escape', spawn('xkill'), desc('kill process / client by mouse click')),
 	k({ modkey }, '-', toggle_systray, desc('toggle systray visibility')),
 	k({ Alt, Shift }, '=', useless_gaps_resize(1), desc('increment useless gaps')),

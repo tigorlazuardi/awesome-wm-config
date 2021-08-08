@@ -17,12 +17,11 @@ run_once({
 	'/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1',
 	'numlockx on',
 	'volumeicon',
-	-- 'conky -c "$HOME/.config/awesome/conky_config.lua"',
-	-- 'xfce4-power-manager',
 	'blueberry-tray',
 	'imwheel',
 	'volnoti',
 	'greenclip daemon',
+	'kdeconnect-indicator',
 }) -- entries must be comma-separated
 
 -- restart picom on every run

@@ -31,6 +31,7 @@ M.floating_clients = {
 			'xtightvncviewer',
 			'Xfce4-terminal',
 			'Variety',
+			'Oblogout',
 		},
 
 		name = {
