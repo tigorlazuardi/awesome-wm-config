@@ -9,7 +9,8 @@ local keys = gears.table.join(
 	require('mappings.keyboard.layout'),
 	require('mappings.keyboard.move'),
 	require('mappings.keyboard.tags'),
-	require('mappings.keyboard.variety')
+	require('mappings.keyboard.variety'),
+	require('mappings.keyboard.programs')
 )
 
 return keys
