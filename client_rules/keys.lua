@@ -32,7 +32,7 @@ M.client_keys = gears.table.join(
 	k({ modkey }, 'o', function(c)
 		c:move_to_screen()
 	end, desc('move to screen')),
-	k({ modkey }, 'n', function(c)
+	k({ modkey, 'Shift' }, 'n', function(c)
 		c.minimized = true
 	end, desc('minimize')),
 	k({ modkey }, 'm', function(c)

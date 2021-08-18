@@ -61,4 +61,14 @@ M.floating_clients_centered = {
 	end,
 }
 
+M.grab_focus_on_spawn = {
+	rule_any = {
+		class = {
+			'neovide',
+			'Neovide'
+		},
+	},
+	properties = { focus = true },
+}
+
 return M
