@@ -11,5 +11,4 @@ awful.rules.rules = {
 	classes_rule.xfce_settings_manager,
 	classes_rule.floating_clients,
 	classes_rule.floating_clients_centered,
-	classes_rule.grab_focus_on_spawn,
 }

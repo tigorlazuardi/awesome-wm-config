@@ -16,7 +16,6 @@ M.floating_clients = {
 			'Gnome-font-viewer',
 			'Gpick',
 			'Imagewriter',
-			'Font-manager',
 			'Kruler',
 			'MessageWin', -- kalarm.
 			'arcolinux-logout',
@@ -41,6 +40,7 @@ M.floating_clients = {
 			'AlarmWindow', -- Thunderbird's calendar.
 			-- 'pop-up', -- e.g. Google Chrome's (detached) Developer Tools.
 			'Preferences',
+			'WebRTCGlobalIndicator',
 			'setup',
 		},
 	},
@@ -59,16 +59,6 @@ M.floating_clients_centered = {
 	callback = function(c)
 		awful.placement.centered(c, nil)
 	end,
-}
-
-M.grab_focus_on_spawn = {
-	rule_any = {
-		class = {
-			'neovide',
-			'Neovide'
-		},
-	},
-	properties = { focus = true },
 }
 
 return M
