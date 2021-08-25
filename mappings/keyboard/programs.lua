@@ -9,5 +9,6 @@ local modkey = require('options').modkey
 
 return gears.table.join(
 	k({ modkey }, 'n', h.spawn('neovide'), desc('neovide')),
-	k({ modkey }, 'b', h.spawn('firefox'), desc('firefox'))
+	k({ modkey }, 'b', h.spawn('firefox'), desc('firefox')),
+	k({ modkey }, 'c', h.spawn('xdg-open https://calendar.google.com'), desc('calendar'))
 )
