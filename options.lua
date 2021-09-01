@@ -3,10 +3,10 @@ local menubar = require("menubar")
 local O = {}
 
 O.modkey = "Mod4"
-O.terminal = "wezterm"
+O.terminal = "kitty"
 O.editor = os.getenv("EDITOR") or "nvim"
-O.editor_cmd = O.terminal .. " start -- " .. O.editor .. " "
-O.terminal_exec = O.terminal .. " start -- "
+O.editor_cmd = "kitty "
+O.terminal_exec = "kitty "
 O.explorer = "nemo"
 
 menubar.utils.terminal = O.terminal
